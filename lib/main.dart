@@ -4,6 +4,7 @@ import 'package:palindrome_suitmedia/data/repositories.dart';
 import 'package:palindrome_suitmedia/domain/use_case.dart';
 import 'package:palindrome_suitmedia/presentation/bloc.dart';
 import 'package:palindrome_suitmedia/ui/first_screen.dart';
+import 'package:palindrome_suitmedia/ui/second_screen.dart';
 
 void main() {
   runApp(const MyApp());
