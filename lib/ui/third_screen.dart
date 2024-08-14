@@ -34,41 +34,46 @@ class _ThirdScreenState extends State<ThirdScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => _usersBloc,
+        ),
+      ],
+      child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
           title: Text(
             'Third Screen',
           ),
         ),
-        body: BlocProvider(
-          create: (context) => _usersBloc,
-          child: BlocBuilder<UsersBloc, UsersState>(
-            builder: (context, state) {
-              if (state is UsersInitial) {
-                return Center(child: CircularProgressIndicator());
-              } else if (state is UsersLoadingState) {
-                return Center(child: CircularProgressIndicator());
-              } else if (state is UsersLoadedState) {
-                return ListView.builder(
-                  itemCount: state.users.length,
-                  itemBuilder: (context, index) {
-                    final user = state.users[index];
-                    return ListTile(
-                      leading: CircleAvatar(
-                          backgroundImage: NetworkImage(user.avatar)),
-                      title: Text(user.firstName + ' ' + user.lastName),
-                      subtitle: Text(user.email),
-                    );
-                  },
-                );
-              } else if (state is UsersErrorState) {
-                return Center(child: Text(state.errorMessage));
-              } else {
-                return Container();
-              }
-            },
-          ),
-        ));
+        body: BlocBuilder<UsersBloc, UsersState>(
+          builder: (context, state) {
+            if (state is UsersInitial) {
+              return Center(child: CircularProgressIndicator());
+            } else if (state is UsersLoadingState) {
+              return Center(child: CircularProgressIndicator());
+            } else if (state is UsersLoadedState) {
+              return ListView.builder(
+                itemCount: state.users.length,
+                itemBuilder: (context, index) {
+                  final user = state.users[index];
+                  return ListTile(
+                    leading: CircleAvatar(
+                        backgroundImage: NetworkImage(user.avatar)),
+                    title: Text(user.firstName + ' ' + user.lastName),
+                    subtitle: Text(user.email),
+                  );
+                },
+              );
+            } else if (state is UsersErrorState) {
+              return Center(child: Text(state.errorMessage));
+            } else {
+              return Container();
+            }
+          },
+        ),
+      ),
+    );
   }
 }
