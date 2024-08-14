@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:palindrome_suitmedia/presentation/bloc.dart';
+import 'package:palindrome_suitmedia/presentation/palindrome_bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:palindrome_suitmedia/presentation/events.dart';
-import 'package:palindrome_suitmedia/presentation/states.dart';
+import 'package:palindrome_suitmedia/presentation/palindrome_bloc/events.dart';
+import 'package:palindrome_suitmedia/presentation/palindrome_bloc/states.dart';
 import 'package:palindrome_suitmedia/ui/second_screen.dart';
 
 class FirstScreen extends StatefulWidget {

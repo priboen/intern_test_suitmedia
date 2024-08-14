@@ -1,5 +1,5 @@
-import 'package:palindrome_suitmedia/domain/entities.dart';
-import 'package:palindrome_suitmedia/domain/use_case.dart';
+import 'package:palindrome_suitmedia/domain/palindrome/entities.dart';
+import 'package:palindrome_suitmedia/domain/palindrome/use_case.dart';
 
 abstract class PalindromeRepository {
   Future<Palindrome> checkPalindrome(String text);

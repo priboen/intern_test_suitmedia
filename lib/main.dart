@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:palindrome_suitmedia/data/repositories.dart';
-import 'package:palindrome_suitmedia/domain/use_case.dart';
-import 'package:palindrome_suitmedia/presentation/bloc.dart';
+import 'package:palindrome_suitmedia/data/repository/repositories.dart';
+import 'package:palindrome_suitmedia/domain/palindrome/use_case.dart';
+import 'package:palindrome_suitmedia/presentation/palindrome_bloc/bloc.dart';
 import 'package:palindrome_suitmedia/ui/first_screen.dart';
 import 'package:palindrome_suitmedia/ui/second_screen.dart';
+import 'package:palindrome_suitmedia/ui/third_screen.dart';
 
 void main() {
   runApp(const MyApp());

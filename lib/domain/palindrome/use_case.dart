@@ -1,4 +1,4 @@
-import 'package:palindrome_suitmedia/domain/entities.dart';
+import 'package:palindrome_suitmedia/domain/palindrome/entities.dart';
 
 abstract class PalindromeUseCase {
   Future<Palindrome> checkPalindrome(String text);

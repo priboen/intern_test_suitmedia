@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:palindrome_suitmedia/data/repositories.dart';
-import 'package:palindrome_suitmedia/presentation/events.dart';
-import 'package:palindrome_suitmedia/presentation/states.dart';
+import 'package:palindrome_suitmedia/data/repository/repositories.dart';
+import 'package:palindrome_suitmedia/presentation/palindrome_bloc/events.dart';
+import 'package:palindrome_suitmedia/presentation/palindrome_bloc/states.dart';
 
 // class PalindromeBloc extends Bloc<PalindromeEvent, PalindromeState> {
 //   final PalindromeRepository _repository;
