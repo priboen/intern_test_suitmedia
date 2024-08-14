@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:palindrome_suitmedia/data/repository/user_repository.dart';
+import 'package:palindrome_suitmedia/domain/users/user_usecase.dart';
+import 'package:palindrome_suitmedia/presentation/users_bloc/user_bloc.dart';
+import 'package:http/http.dart' as http;
+import 'package:palindrome_suitmedia/ui/third_screen.dart';
 
 class SecondScreen extends StatefulWidget {
   final String name;
@@ -48,7 +54,7 @@ class _SecondScreenState extends State<SecondScreen> {
             ),
             Center(
               child: Text(
-                "Selected User",
+                "Selected User Name",
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
@@ -60,7 +66,27 @@ class _SecondScreenState extends State<SecondScreen> {
                   backgroundColor: Color.fromRGBO(43, 99, 123, 1),
                   elevation: 0,
                   minimumSize: Size(size * 0.8, 40)),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MultiBlocProvider(
+                      providers: [
+                        BlocProvider(
+                          create: (context) => UsersBloc(
+                            getUsersUseCase: GetUserUseCase(
+                              repository: UserRepository(
+                                client: http.Client(),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                      child: ThirdScreen(),
+                    ),
+                  ),
+                );
+              },
               child: Text(
                 "Choose a User",
                 style: TextStyle(
