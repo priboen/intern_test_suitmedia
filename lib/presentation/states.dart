@@ -12,3 +12,9 @@ class PalindromeCheckedState extends PalindromeState {
 
   PalindromeCheckedState(this.result);
 }
+
+class NavigateToSecondScreenState extends PalindromeState {
+  final String name;
+
+  NavigateToSecondScreenState(this.name);
+}

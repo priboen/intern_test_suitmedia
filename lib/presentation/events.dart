@@ -12,3 +12,9 @@ class CheckPalindromeEvent extends PalindromeEvent {
 }
 
 class ResetStateEvent extends PalindromeEvent {}
+
+class NavigateToSecondScreenEvent extends PalindromeEvent {
+  final String name;
+
+  NavigateToSecondScreenEvent(this.name);
+}
